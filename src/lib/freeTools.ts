@@ -5,6 +5,7 @@ import {
   Shield,
   ClipboardList,
   FileSearch,
+  ScanLine,
 } from "lucide-react";
 
 export type FreeTool = {
@@ -77,5 +78,15 @@ export const FREE_TOOLS: FreeTool[] = [
     icon: FileSearch,
     color: "from-purple-500 to-pink-500",
     badge: "Document Parser",
+  },
+  {
+    href: "/tools/cad-pdf-extractor/",
+    title: "CAD PDF Extractor — Rooms, Measurements & Doors/Windows",
+    shortTitle: "CAD PDF Extractor",
+    description:
+      "Upload CAD PDF floor plans to extract room labels, printed dimensions and areas, doors and windows, drawing previews and technical diagnostics. Vector and scanned plans supported.",
+    icon: ScanLine,
+    color: "from-indigo-500 to-cyan-500",
+    badge: "CAD Extractor",
   },
 ];

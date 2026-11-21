@@ -35,3 +35,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 patent/*
+
+# python (cad-pdf-extractor)
+cad-pdf-extractor/.venv/
+cad-pdf-extractor/**/__pycache__/
+cad-pdf-extractor/**/*.pyc
+cad-pdf-extractor/.pytest_cache/

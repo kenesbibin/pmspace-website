@@ -7,6 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "cad:backend": "node cad-pdf-extractor/ngrok.mjs backend",
+    "cad:tunnel": "node cad-pdf-extractor/ngrok.mjs start",
+    "cad:status": "node cad-pdf-extractor/ngrok.mjs status",
+    "cad:tunnel:stop": "node cad-pdf-extractor/ngrok.mjs stop",
+    "test:cad-proxy": "node --test tests/cad-pdf-backend.test.mjs",
     "geo:check": "node scripts/check-geo-integrity.mjs",
     "generate:llms": "node scripts/generate-llms-full.mjs",
     "postbuild": "node scripts/generate-image-sitemap.js"
