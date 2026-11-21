@@ -3,6 +3,13 @@
 A small, beginner-friendly web app that extracts information from PDF
 engineering drawings, floor plans and CAD exports.
 
+> **Integrated website / ngrok backend:** the current website UI is at
+> `/tools/cad-pdf-extractor`, and the website API uses `CAD_PDF_API_URL` plus
+> server-side bearer authentication. See [NGROK.md](NGROK.md) for safe Linux
+> startup that leaves other running applications and tunnels untouched.
+> The standalone `frontend/` instructions below describe the original app;
+> they are not the setup instructions for this integrated website.
+
 It runs fully **locally**. No Docker, no cloud, no API keys, no paid
 services, no database. Uploaded PDFs are processed **in memory** and are not
 saved to disk.

@@ -41,6 +41,7 @@ from __future__ import annotations
 
 import re
 import time
+from backend.resource_limits import check_render, check_pages, ResourceLimitError
 from collections import deque
 from typing import Any, Dict, List, Optional, Sequence, Tuple
 
@@ -818,9 +819,12 @@ def _render_gray(page: Any) -> Optional[Tuple[Any, int, int]]:
     zoom = IMAGE_REGION_MAX_DIM_PX / longest
     zoom = max(0.1, min(4.0, zoom))
     try:
+        check_render(page, fitz.Matrix(zoom, zoom))
         pixmap = page.get_pixmap(
             matrix=fitz.Matrix(zoom, zoom), colorspace=fitz.csGRAY, alpha=False
         )
+    except ResourceLimitError:
+        raise
     except Exception:
         return None
     arr = np.frombuffer(pixmap.samples, dtype=np.uint8).reshape(
@@ -1147,6 +1151,7 @@ def analyze_rooms(
     started = time.perf_counter()
     doc = open_document(data, password)
     try:
+        check_pages(doc)
         return _analyze_document(
             doc,
             use_image_regions=use_image_regions,

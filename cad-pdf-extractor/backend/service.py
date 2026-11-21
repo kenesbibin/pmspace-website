@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import base64
 import traceback
+from backend.resource_limits import ResourceLimitError
 from typing import Any, Dict, Optional
 
 from analyzer import analyze_rooms
@@ -28,7 +29,7 @@ from extractor import (
 MAX_UPLOAD_BYTES = MAX_UPLOAD_MB * 1024 * 1024
 MAX_PREVIEW_DPI = 200
 MIN_PREVIEW_DPI = 36
-MAX_PREVIEW_PAGES_LIMIT = 500
+MAX_PREVIEW_PAGES_LIMIT = 10
 
 PASSWORD_ERROR = (
     "This PDF is password protected. Enter the correct password to continue."
@@ -70,9 +71,12 @@ def build_result(
         raise ExtractionError(PASSWORD_ERROR, status=401, code="password_required")
 
     dpi = clamp_int(preview_dpi, DEFAULT_PREVIEW_DPI, MIN_PREVIEW_DPI, MAX_PREVIEW_DPI)
-    pages_limit = clamp_int(
-        max_preview_pages, DEFAULT_MAX_PREVIEW_PAGES, 0, MAX_PREVIEW_PAGES_LIMIT
-    )
+    try:
+        pages_limit = int(max_preview_pages) if max_preview_pages not in (None, "") else DEFAULT_MAX_PREVIEW_PAGES
+    except (ValueError, TypeError):
+        raise ExtractionError("Preview pages must be an integer from 1 to 10.", status=400)
+    if not 1 <= pages_limit <= MAX_PREVIEW_PAGES_LIMIT:
+        raise ExtractionError("Preview pages must be from 1 to 10; unlimited previews are disabled.", status=400)
     vectors = (count_vectors or "true").lower() not in {"false", "0", "no"}
 
     try:
@@ -92,6 +96,8 @@ def build_result(
         )
     except PermissionError as exc:
         raise ExtractionError(friendly_error(exc), status=401, code="password_required")
+    except ResourceLimitError as exc:
+        raise ExtractionError(str(exc), status=413, code="resource_limit")
     except Exception as exc:
         traceback.print_exc()
         raise ExtractionError(friendly_error(exc), status=422)

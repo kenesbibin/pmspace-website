@@ -538,7 +538,7 @@ class TestNoTextAndNoLabels(unittest.TestCase):
                 f"5\t1\t1\t1\t{index}\t1\t10\t{index * 15}\t30\t10\t90\t{word}"
             )
         fake_process = SimpleNamespace(stdout=("\n".join(rows) + "\n").encode())
-        with patch("extractor.is_ocr_available", return_value=True), patch(
+        with patch("extractor.shutil.which", return_value="tesseract.exe"), patch(
             "extractor._embedded_page_image",
             return_value=(
                 Image.new("L", (300, 400), "white"),
@@ -552,6 +552,35 @@ class TestNoTextAndNoLabels(unittest.TestCase):
         self.assertIn("KITCHEN", text)
         self.assertIn("selectable", {line.get("text_source") for line in lines})
         self.assertIn("ocr", {line.get("text_source") for line in lines})
+
+    def test_selectable_text_is_preserved_when_executable_discovery_fails(self):
+        from types import SimpleNamespace
+        from unittest.mock import patch
+
+        from PIL import Image
+
+        page = SimpleNamespace(
+            rect=SimpleNamespace(x0=0, y0=0, width=100, height=200),
+            get_images=lambda full: [(1,)],
+            get_text=lambda kind: "DRAWING TITLE" if kind == "text" else {
+                "blocks": [{"type": 0, "lines": [{
+                    "spans": [{"text": "DRAWING TITLE"}], "bbox": [10, 10, 80, 20],
+                }]}],
+            },
+        )
+        # Cover both initial unavailability and loss between the two lookups.
+        for available in (False, True):
+            with self.subTest(initially_available=available), patch(
+                "extractor.is_ocr_available", return_value=available
+            ), patch("extractor.shutil.which", return_value=None), patch(
+                "extractor._embedded_page_image",
+                return_value=(Image.new("L", (300, 400), "white"), page.rect),
+            ), patch("extractor.subprocess.run") as run:
+                text, source, lines = read_page_text(page)
+            self.assertEqual(text, "DRAWING TITLE")
+            self.assertEqual(source, "selectable")
+            self.assertEqual(lines[0]["text"], "DRAWING TITLE")
+            run.assert_not_called()
 
     def test_analyzer_uses_ocr_text_and_reduces_confidence(self):
         import pymupdf

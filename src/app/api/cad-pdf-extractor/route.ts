@@ -2,6 +2,7 @@ import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import path from "node:path";
 import { NextResponse } from "next/server";
+import { forwardCadPdf } from "@/lib/cad-pdf-backend";
 
 export const runtime = "nodejs";
 export const maxDuration = 120;
@@ -35,32 +36,6 @@ function resolvePython(root: string): { command: string; args: string[] } {
 
   if (process.platform === "win32") return { command: "py", args: ["-3"] };
   return { command: "python3", args: [] };
-}
-
-async function proxyToBackend(file: File, form: FormData, backendUrl: string): Promise<ExtractResult> {
-  const forward = new FormData();
-  forward.append("file", file, file.name);
-
-  for (const field of ["password", "preview_dpi", "max_preview_pages", "count_vectors"]) {
-    const value = form.get(field);
-    if (typeof value === "string") forward.append(field, value);
-  }
-
-  try {
-    const response = await fetch(`${backendUrl.replace(/\/$/, "")}/api/extract`, {
-      method: "POST",
-      body: forward,
-      signal: AbortSignal.timeout(EXTRACT_TIMEOUT_MS),
-    });
-    const body = await response.json().catch(() => null);
-    return { status: response.status, body };
-  } catch (err) {
-    const message =
-      err instanceof Error && err.name === "TimeoutError"
-        ? "The extraction timed out. Try a smaller PDF or lower the preview settings."
-        : "Could not reach the CAD PDF extraction service.";
-    return { status: 502, body: { error: message, code: "backend_unreachable" } };
-  }
 }
 
 function runLocalExtraction(
@@ -232,7 +207,7 @@ export async function POST(request: Request) {
 
   const backendUrl = process.env.CAD_PDF_API_URL;
   const result = backendUrl
-    ? await proxyToBackend(file, form, backendUrl)
+    ? await forwardCadPdf(file, form, backendUrl)
     : await runLocalExtraction(file, {
         password: typeof form.get("password") === "string" ? String(form.get("password")) : "",
         previewDpi: String(form.get("preview_dpi") ?? ""),

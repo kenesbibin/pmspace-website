@@ -1,9 +1,8 @@
 """FastAPI backend for CAD PDF Extractor.
 
 Reuses the shared extraction logic in backend/service.py. The Next.js
-frontend (frontend/) can talk to this server, or run the same pipeline
-in-process on port 3000 (the default). Everything runs locally and in
-memory - files are never saved to disk.
+frontend can talk to this server, or run the same pipeline locally.
+Uploads may spool to restricted temporary storage and are closed after use.
 
 Start (from the project root, with the virtual environment active):
 
@@ -13,8 +12,11 @@ Start (from the project root, with the virtual environment active):
 from __future__ import annotations
 
 import sys
+import os
+from contextlib import asynccontextmanager
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from functools import partial
 
 # Allow "import extractor" regardless of the working directory.
 _PROJECT_ROOT = str(Path(__file__).resolve().parents[1])
@@ -26,12 +28,24 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from backend.service import MAX_UPLOAD_BYTES, ExtractionError, build_result
+from backend.auth import BearerAuth, load_token
+from backend.resource_limits import ExtractionAdmission, prepare_upload_storage, run_extraction
 from extractor import APP_TITLE
 
 READ_CHUNK_SIZE = 1024 * 1024
 
 
-app = FastAPI(title=APP_TITLE, version="1.0.0")
+@asynccontextmanager
+async def lifespan(application):
+    application.state.auth_token = load_token(os.environ.get("CAD_API_TOKEN_FILE"))
+    prepare_upload_storage()
+    try:
+        yield
+    finally:
+        application.state.auth_token = None
+
+
+app = FastAPI(title=APP_TITLE, version="1.0.0", lifespan=lifespan)
 
 # The backend is local-only; CORS is limited to the Next.js dev server.
 app.add_middleware(
@@ -43,6 +57,13 @@ app.add_middleware(
     allow_credentials=False,
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["*"],
+)
+
+app.add_middleware(ExtractionAdmission)
+
+# Outermost middleware: reject unauthorized requests before admission/parsing.
+app.add_middleware(
+    BearerAuth, token_provider=lambda: getattr(app.state, "auth_token", None)
 )
 
 
@@ -82,22 +103,23 @@ async def extract(
     count_vectors: Optional[str] = Form(None),
 ) -> Dict[str, Any]:
     filename = file.filename or "uploaded.pdf"
-    data = await read_upload_capped(file, MAX_UPLOAD_BYTES)
-
     try:
-        return build_result(
+        data = await read_upload_capped(file, MAX_UPLOAD_BYTES)
+        return await run_extraction(partial(build_result,
             data,
             filename,
             password=password,
             preview_dpi=preview_dpi,
             max_preview_pages=max_preview_pages,
             count_vectors=count_vectors,
-        )
+        ))
     except ExtractionError as exc:
         detail: Any = exc.message
         if exc.code:
             detail = {"code": exc.code, "message": exc.message}
         raise HTTPException(status_code=exc.status, detail=detail)
+    finally:
+        await file.close()
 
 
 @app.exception_handler(HTTPException)

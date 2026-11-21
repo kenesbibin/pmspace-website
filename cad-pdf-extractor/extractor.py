@@ -18,6 +18,7 @@ import subprocess
 from typing import Any, Dict, List, Optional, Tuple
 
 from PIL import Image, ImageEnhance, ImageOps
+from backend.resource_limits import check_image, check_render, check_pages, ResourceLimitError
 
 try:
     import pymupdf as fitz  # PyMuPDF (current import name)
@@ -114,6 +115,7 @@ def count_vector_geometry(page: Any) -> Tuple[int, int]:
 def page_to_png(page: Any, dpi: int) -> bytes:
     zoom = dpi / POINTS_PER_INCH
     matrix = fitz.Matrix(zoom, zoom)
+    check_render(page, matrix)
     pixmap = page.get_pixmap(matrix=matrix, alpha=False)
     return pixmap.tobytes("png")
 
@@ -130,8 +132,11 @@ def _embedded_page_image(page: Any) -> Optional[Tuple[Image.Image, Any]]:
         best: Optional[Tuple[int, Image.Image, Any]] = None
         for image_info in page.get_images(full=True):
             xref = image_info[0]
+            check_image(image_info[2], image_info[3])
             image_data = page.parent.extract_image(xref)["image"]
-            image = Image.open(io.BytesIO(image_data)).convert("L")
+            image = Image.open(io.BytesIO(image_data))
+            check_image(image.width, image.height)
+            image = image.convert("L")
             for rect in page.get_image_rects(xref, transform=False):
                 rect_area = float(rect.width) * float(rect.height)
                 if rect_area < page_area * OCR_EMBEDDED_COVERAGE:
@@ -144,6 +149,8 @@ def _embedded_page_image(page: Any) -> Optional[Tuple[Image.Image, Any]]:
                     best = (image.width * image.height, image.copy(), rect)
         if best is not None:
             return best[1], best[2]
+    except ResourceLimitError:
+        raise
     except (AttributeError, KeyError, TypeError, ValueError):
         return None
     return None
@@ -193,6 +200,7 @@ def read_page_text(page: Any) -> Tuple[str, str, List[Dict[str, Any]]]:
         if embedded_image:
             image, source_rect = embedded_image
         else:
+            check_render(page, fitz.Matrix(OCR_DPI / POINTS_PER_INCH, OCR_DPI / POINTS_PER_INCH))
             pixmap = page.get_pixmap(
                 matrix=fitz.Matrix(
                     OCR_DPI / POINTS_PER_INCH, OCR_DPI / POINTS_PER_INCH
@@ -220,7 +228,7 @@ def read_page_text(page: Any) -> Tuple[str, str, List[Dict[str, Any]]]:
 
         executable = shutil.which("tesseract")
         if executable is None:
-            return "", "none", []
+            return (text, "selectable", selectable_lines) if text.strip() else ("", "none", [])
         command = [executable, "stdin", "stdout", "-l", "eng"]
         image_data = image_bytes.getvalue()
         result = subprocess.run(
@@ -459,6 +467,9 @@ def extract_pdf(
     """
     doc = open_document(data, password)
     try:
+        check_pages(doc)
+        if not 1 <= max_preview_pages <= 10:
+            raise ResourceLimitError("Preview pages must be from 1 to 10.")
         pages: List[Dict[str, Any]] = []
         analysis_pages: List[Dict[str, Any]] = []
         previews: Dict[int, bytes] = {}
@@ -503,6 +514,8 @@ def extract_pdf(
             if max_preview_pages == 0 or index < max_preview_pages:
                 try:
                     previews[index] = page_to_png(page, preview_dpi)
+                except ResourceLimitError:
+                    raise
                 except Exception:
                     previews.pop(index, None)
 
