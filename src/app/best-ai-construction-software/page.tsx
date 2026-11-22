@@ -6,9 +6,9 @@ import { FAQSchema } from "@/components/SEOSchemas";
 const SITE_URL = "https://pmspace.ai";
 
 export const metadata: Metadata = {
-  title: "Best AI Construction Software 2026 | Buyer's Guide | Space AI",
+  title: "Best AI Construction Software 2026 | Space AI",
   description:
-    "Compare the best AI construction software for scheduling, documents, RFIs, submittals, cost control, analytics, and integrations. Space AI leads with 85-95% prediction accuracy. Start free.",
+    "Compare the best AI construction software for scheduling, documents, RFIs, submittals, cost control, and analytics. Space AI leads with predictive accuracy.",
   keywords: [
     "best AI construction software",
     "AI construction management software",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/best-ai-construction-software/`,
   },
   openGraph: {
-    title: "Best AI Construction Software 2026 | Buyer's Guide | Space AI",
+    title: "Best AI Construction Software 2026 | Space AI",
     description:
       "Compare the best AI construction software. Space AI leads with 85-95% prediction accuracy, 45-day delay forecasting, and free tier available.",
     url: `${SITE_URL}/best-ai-construction-software/`,

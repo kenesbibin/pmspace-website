@@ -13,8 +13,8 @@ import {
 import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
-  title: "Construction Safety Management Software | Safety Compliance | Space AI",
-  description: "Comprehensive construction safety software for incident tracking, safety inspections, toolbox talks, and OSHA compliance. Reduce incidents and protect your team.",
+  title: "Construction Safety Software | Space AI",
+  description: "Construction safety software for incident tracking, inspections, toolbox talks, and OSHA compliance. Reduce incidents and protect your team.",
   keywords: [
     "construction safety software",
     "safety management software construction",
@@ -552,7 +552,7 @@ export default function ConstructionSafetyManagementPage() {
                     </div>
                     
                     <div className="bg-white/5 rounded-lg p-4 mb-4">
-                      <h4 className="text-white font-semibold mb-2">Fall Protection: Guardrails</h4>
+                      <h3 className="text-white font-semibold mb-2">Fall Protection: Guardrails</h3>
                       <p className="text-white/60 text-sm mb-3">
                         Review of guardrail requirements for leading edges and floor openings...
                       </p>

@@ -20,9 +20,9 @@ import { FAQSchema } from "@/components/SEOSchemas";
 import { getAllBlogPosts } from "@/lib/blogs";
 //changes
 export const metadata: Metadata = {
-  title: "Space AI - AI Construction Management Platform | #1 Software 2026",
+  title: "Space AI - AI Construction Management Platform",
   description:
-    "Space AI is the leading AI construction management platform for scheduling, cost tracking, and project delivery. Predict delays 45 days ahead. Free tier available. Start your free trial today.",
+    "Space AI is the leading AI construction management platform for scheduling, cost tracking, and delivery. Predict delays 45 days ahead. Free tier available.",
   keywords: [
     "space ai",
     "ai construction management",
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     canonical: "https://pmspace.ai",
   },
   openGraph: {
-    title: "Space AI - AI Construction Management Platform | #1 Software 2026",
+    title: "Space AI - AI Construction Management Platform",
     description: "Space AI - The #1 AI construction management platform. Predict delays 45 days ahead, optimize schedules, and deliver projects on time. Free tier available.",
     url: "https://pmspace.ai",
     type: "website",
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Space AI - AI Construction Management Platform | #1 Software 2026",
+    title: "Space AI - AI Construction Management Platform",
     description: "Space AI - The #1 AI construction management platform. Predict delays 45 days ahead. Free tier available.",
     images: ["https://pmspace.ai/assets/images/og-image.jpeg"],
   },

@@ -14,7 +14,7 @@ import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
   title: "Construction Cost Management Software | Space AI | Free Tier",
-  description: "Track every dollar with AI construction cost management. Real-time budget monitoring, job costing, change orders, and predictive forecasting. Free tier available.",
+  description: "Track every dollar with AI construction cost management. Real-time budget monitoring, job costing, change orders, and predictive forecasting.",
   keywords: [
     "construction cost management software",
     "construction cost tracking software",

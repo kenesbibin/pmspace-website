@@ -43,6 +43,13 @@ Sitemap: https://pmspace.ai/sitemap.xml
 Sitemap: https://pmspace.ai/image-sitemap.xml
 Sitemap: https://pmspace.ai/video-sitemap.xml
 
+# OpenSEO Audit
+User-agent: OpenSEO-Audit
+Disallow: /tags/
+Disallow: /category/
+Disallow: /*?*filter=
+Disallow: /*?*page=
+
 # AI retrieval files
 LLM-Index: https://pmspace.ai/llms.txt
 LLM-Full: https://pmspace.ai/llms-full.txt

@@ -2,9 +2,9 @@ import { Metadata } from "next";
 import CommercialConstructionSoftwarePage from "./CommercialConstructionSoftwarePage";
 
 export const metadata: Metadata = {
-  title: "Commercial Construction Software 2026 | Enterprise Project Management | Space AI",
+  title: "Commercial Construction Software | Space AI",
   description:
-    "Best commercial construction software for enterprise contractors and general builders. AI-powered project management, document control, and multi-site coordination with predictive analytics. Start free.",
+    "Best commercial construction software for enterprise contractors. AI project management, document control, and multi-site coordination. Start free.",
   keywords: [
     "commercial construction software",
     "commercial construction management software",

@@ -5,7 +5,7 @@ import { appsData } from '@/lib/apps';
 
 export const metadata: Metadata = {
   title: 'Construction Apps | Space AI',
-  description: 'Mobile and desktop construction management apps for site operations, team coordination, daily reports, and real-time project updates. Works offline and syncs instantly from the field.',
+  description: 'Mobile and desktop construction management apps for site operations, team coordination, daily reports, and real-time project updates.',
   alternates: {
     canonical: 'https://pmspace.ai/apps/',
   },

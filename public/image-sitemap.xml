@@ -5,11 +5,6 @@
   <url>
     <loc>https://pmspace.ai/</loc>
     <image:image>
-      <image:loc>https://pmspace.ai/assets/images/Naukri.png</image:loc>
-      <image:title>Naukri</image:title>
-      <image:caption>Naukri - Space AI Construction Management</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://pmspace.ai/assets/images/about-meetup/space-ai-founders-company-meetup.png</image:loc>
       <image:title>Space Ai Founders Company Meetup</image:title>
       <image:caption>Space Ai Founders Company Meetup - Space AI Construction Management</image:caption>
@@ -585,6 +580,11 @@
       <image:caption>Naukri Logo - Space AI Construction Management</image:caption>
     </image:image>
     <image:image>
+      <image:loc>https://pmspace.ai/assets/images/Naukri.png</image:loc>
+      <image:title>Naukri</image:title>
+      <image:caption>Naukri - Space AI Construction Management</image:caption>
+    </image:image>
+    <image:image>
       <image:loc>https://pmspace.ai/assets/images/og-image.jpeg</image:loc>
       <image:title>Og Image</image:title>
       <image:caption>Og Image - Space AI Construction Management</image:caption>
@@ -785,14 +785,14 @@
       <image:caption>Space Vision Ar Site Intelligence - Space AI Construction Management</image:caption>
     </image:image>
     <image:image>
-      <image:loc>https://pmspace.ai/assets/images/space_ecosystem_thumbnail.png</image:loc>
-      <image:title>Space Ecosystem Thumbnail</image:title>
-      <image:caption>Space Ecosystem Thumbnail - Space AI Construction Management</image:caption>
-    </image:image>
-    <image:image>
       <image:loc>https://pmspace.ai/assets/images/spaceai_ecosystem_tn.webp</image:loc>
       <image:title>Spaceai Ecosystem Tn</image:title>
       <image:caption>Spaceai Ecosystem Tn - Space AI Construction Management</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://pmspace.ai/assets/images/space_ecosystem_thumbnail.png</image:loc>
+      <image:title>Space Ecosystem Thumbnail</image:title>
+      <image:caption>Space Ecosystem Thumbnail - Space AI Construction Management</image:caption>
     </image:image>
     <image:image>
       <image:loc>https://pmspace.ai/assets/images/subcontractor-management-og.png</image:loc>

@@ -125,9 +125,9 @@ export default function CareersPage() {
                 </div>
                 
                 <div className="flex flex-col md:flex-row md:items-center justify-between mb-3">
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white">
+                  <h2 className="text-xl sm:text-2xl font-semibold text-white">
                     {job.title}
-                  </h3>
+                  </h2>
                   <span className="text-sm text-white/70 mt-1 md:mt-0 md:ml-2 px-3 py-1 bg-white/10 rounded-full">
                     {job.experience}
                   </span>

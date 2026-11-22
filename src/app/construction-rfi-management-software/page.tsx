@@ -13,7 +13,7 @@ import {
 import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
-  title: "Construction RFI Management Software | Track RFIs Faster | Space AI",
+  title: "Construction RFI Software | Space AI",
   description: "Streamline RFI workflows with AI-powered tracking. Create, route, and resolve RFIs 60% faster. Never lose an RFI again. Start free.",
   keywords: [
     "construction RFI software",

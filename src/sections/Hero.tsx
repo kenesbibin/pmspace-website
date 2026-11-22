@@ -252,7 +252,7 @@ export const Hero = () => {
             </motion.span>
           </motion.p>
         </motion.div>
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -274,7 +274,7 @@ export const Hero = () => {
           >
             Every Construction Decision
           </motion.span>
-        </motion.h1>
+        </motion.h2>
 
         <motion.p
           initial={{ opacity: 0, y: 20 }}

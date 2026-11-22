@@ -13,7 +13,7 @@ import {
 import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
-  title: "Free Construction Management Software | Space AI | Download Free",
+  title: "Free Construction Management Software | Space AI",
   description: "Download Space AI free construction management software with unlimited projects, AI scheduling, and team collaboration. Free forever. No credit card required.",
   keywords: [
     "free construction management software",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     canonical: "https://pmspace.ai/free-construction-management-software/",
   },
   openGraph: {
-    title: "Free Construction Management Software | Space AI | Download Free",
+    title: "Free Construction Management Software | Space AI",
     description: "Download Space AI free construction management software. Professional tools at no cost. AI scheduling, document management, team collaboration - all free.",
     url: "https://pmspace.ai/free-construction-management-software/",
     type: "website",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Construction Management Software | Space AI | Download Free",
+    title: "Free Construction Management Software | Space AI",
     description: "Download professional construction tools. Zero cost. No credit card required.",
   },
 };

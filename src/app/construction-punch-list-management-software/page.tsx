@@ -13,7 +13,7 @@ import {
 import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
-  title: "Construction Punch List Software | Mobile Punch List App | Space AI",
+  title: "Construction Punch List Software | Space AI",
   description: "Create, assign, and track punch list items from the field. Photo documentation, location tagging, and automatic notifications. Close out projects faster.",
   keywords: [
     "punch list software construction",

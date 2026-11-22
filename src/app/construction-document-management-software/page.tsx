@@ -13,8 +13,8 @@ import {
 import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
-  title: "Construction Document Management Software | Space AI | Free Tier",
-  description: "Organize, search, and share construction documents instantly with AI-powered document management. Auto-classification, version control, and mobile access. Free tier available.",
+  title: "Construction Document Management Software | Space AI",
+  description: "Organize, search, and share construction documents instantly with AI-powered document management. Auto-classification and version control.",
   keywords: [
     "construction document management software",
     "construction document management",

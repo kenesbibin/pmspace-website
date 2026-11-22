@@ -275,14 +275,14 @@ const SystemOfIntelligence = ({
       <section className="-pt-10 pb-4 sm:pb-5 md:pb-6">
         <div className="container mx-auto px-3 sm:px-6">
           <div className="mb-8 text-center md:mb-12 lg:mb-16">
-            <motion.h1
+            <motion.h2
               className="text-xl font-bold leading-snug text-white md:text-2xl lg:text-4xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
               System of Record vs. System of Intelligence
-            </motion.h1>
+            </motion.h2>
           </div>
           <div className="grid items-center gap-6 lg:grid-cols-2 lg:gap-12">
               <motion.div
@@ -309,7 +309,7 @@ const SystemOfIntelligence = ({
                       viewport={{ once: true }}
                       transition={{ duration: 0.7, ease: "easeOut" }}
                   >
-                      <h3 className="text-xl font-bold text-white/70 sm:text-2xl">System of Record (The Past)</h3>
+                      <h2 className="text-xl font-bold text-white/70 sm:text-2xl">System of Record (The Past)</h2>
                       <ul className="mt-5 space-y-3 text-white/60 sm:mt-6 sm:space-y-4">
                           <li className="flex items-start"><CheckCircle className="w-5 h-5 text-red-500 mr-3 mt-1 flex-shrink-0" /> Digitized analog workflows</li>
                           <li className="flex items-start"><CheckCircle className="w-5 h-5 text-red-500 mr-3 mt-1 flex-shrink-0" /> Centralized documentation repository</li>
@@ -323,7 +323,7 @@ const SystemOfIntelligence = ({
                       viewport={{ once: true }}
                       transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
                   >
-                      <h3 className="text-xl font-bold text-purple-300 sm:text-2xl">System of Intelligence (The Future)</h3>
+                      <h2 className="text-xl font-bold text-purple-300 sm:text-2xl">System of Intelligence (The Future)</h2>
                       <ul className="mt-5 space-y-3 text-white sm:mt-6 sm:space-y-4">
                           <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" /> Active data synthesis and prediction</li>
                           <li className="flex items-start"><CheckCircle className="w-5 h-5 text-green-400 mr-3 mt-1 flex-shrink-0" /> Leverages ML, computer vision, and AI agents</li>
