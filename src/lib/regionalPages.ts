@@ -45,7 +45,7 @@ export const regionalPages: Record<string, RegionContent> = {
     canonical: "https://pmspace.ai/construction-management-software-usa/",
     metaTitle: "Construction Software USA | AI Project Controls | Space AI",
     metaDescription:
-      "AI construction management software for US contractors. OSHA-ready safety packs, certified payroll exports, union reporting, and ENR city playbooks to deliver with fewer delays.",
+      "AI construction management software for US contractors. OSHA-ready safety packs and certified payroll exports.",
     keywords: [
       "construction management software usa",
       "project management software usa",
@@ -121,7 +121,7 @@ export const regionalPages: Record<string, RegionContent> = {
     slug: "construction-management-software-india",
     locale: "en-IN",
     canonical: "https://pmspace.ai/construction-management-software-india/",
-    metaTitle: "Construction Software India | RERA-Ready AI Platform | Space AI",
+    metaTitle: "Construction Software India | Space AI",
     metaDescription:
       "AI construction management software for India. RERA-ready documentation, GST-smart cost control, and metro/infra playbooks built for EPCs and developers.",
     keywords: [
@@ -194,7 +194,7 @@ export const regionalPages: Record<string, RegionContent> = {
     canonical: "https://pmspace.ai/construction-management-software-uae/",
     metaTitle: "Construction Software UAE | AI Delivery for GCC | Space AI",
     metaDescription:
-      "AI construction management software for UAE and GCC builders. Municipality approvals, Arabic/English handover packs, and FIDIC-ready workflows with predictive scheduling.",
+      "AI construction management software for UAE and GCC builders. Municipality approvals and FIDIC-ready workflows.",
     keywords: [
       "construction management software uae",
       "project management software uae",
@@ -263,9 +263,9 @@ export const regionalPages: Record<string, RegionContent> = {
     slug: "construction-management-software-uk",
     locale: "en-GB",
     canonical: "https://pmspace.ai/construction-management-software-uk/",
-    metaTitle: "Construction Management Software UK | CDM & NEC Ready | Space AI",
+    metaTitle: "Construction Management Software UK | Space AI",
     metaDescription:
-      "AI construction management software for UK contractors. CDM 2015 safety packs, NEC/FIDIC correspondence, and BIM Level 2-friendly workflows with predictive scheduling.",
+      "AI construction management software for UK contractors. CDM 2015 safety packs and NEC/FIDIC correspondence.",
     keywords: [
       "construction management software uk",
       "project management software uk",
@@ -336,7 +336,7 @@ export const regionalPages: Record<string, RegionContent> = {
     canonical: "https://pmspace.ai/construction-management-software-australia/",
     metaTitle: "Construction Software Australia | NCC & WHS Ready | Space AI",
     metaDescription:
-      "AI construction management software for Australia. NCC/WHS-ready checklists, subcontractor compliance, and weather-aware schedules for Tier-1 and Tier-2 builders.",
+      "AI construction management software for Australia. NCC/WHS-ready checklists and subcontractor compliance.",
     keywords: [
       "construction management software australia",
       "project management software australia",
@@ -405,7 +405,7 @@ export const regionalPages: Record<string, RegionContent> = {
     slug: "construction-management-software-singapore",
     locale: "en-SG",
     canonical: "https://pmspace.ai/construction-management-software-singapore/",
-    metaTitle: "Construction Software Singapore | BCA & PPVC Ready | Space AI",
+    metaTitle: "Construction Software Singapore | Space AI",
     metaDescription:
       "AI construction management software for Singapore. BCA e-submissions, PPVC/QS workflows, and bilingual handovers to keep consultants and owners aligned.",
     keywords: [

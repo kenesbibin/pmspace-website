@@ -65,9 +65,9 @@ const ToolsSection = () => {
 </div>
                   {/* Content container */}
                   <div className="p-6 flex flex-col flex-grow">
-                    <h3 className="text-xl font-semibold mb-3 text-white">
+                    <h2 className="text-xl font-semibold mb-3 text-white">
                       {tool.title}
-                    </h3>
+                    </h2>
                     <p className="text-white/60 group-hover:text-white/80 text-sm sm:text-base font-light leading-relaxed">
                       {tool.description}
                     </p>

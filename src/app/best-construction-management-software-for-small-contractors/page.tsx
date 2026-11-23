@@ -3,9 +3,9 @@ import Link from "next/link";
 import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
-  title: "Best Construction Management Software for Small Contractors | Space AI | Free Tier",
+  title: "Construction Software for Small Contractors | Space AI",
   description:
-    "Find the best construction management software for small contractors. Space AI offers free tier with unlimited projects, AI scheduling, and team collaboration. Start free today.",
+    "Find the best construction management software for small contractors. Space AI offers free tier with AI scheduling and team collaboration.",
   keywords: [
     "construction management software for small business",
     "small business construction management software",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     canonical: "https://pmspace.ai/best-construction-management-software-for-small-contractors/",
   },
   openGraph: {
-    title: "Best Construction Management Software for Small Contractors | Space AI | Free Tier",
+    title: "Construction Software for Small Contractors | Space AI",
     description:
       "Space AI offers free construction management software for small contractors. Unlimited projects, AI scheduling, team collaboration. Start free today.",
     url: "https://pmspace.ai/best-construction-management-software-for-small-contractors/",

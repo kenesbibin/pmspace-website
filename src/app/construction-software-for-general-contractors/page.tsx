@@ -13,7 +13,7 @@ import {
 import { FAQSchema } from "@/components/SEOSchemas";
 
 export const metadata: Metadata = {
-  title: "General Contractor Software | Best GC Project Management | Space AI",
+  title: "General Contractor Software | Space AI",
   description: "The #1 software for general contractors. Manage bids, subcontractors, schedules, and budgets in one platform. AI-powered tools built for GCs. Start free.",
   keywords: [
     "general contractor software",

@@ -6,9 +6,9 @@ import Link from "next/link";
 
 // Generate metadata on the server - Task 46: Optimized for keywords
 export const metadata: Metadata = {
-  title: "Construction Management Guides & Tutorials | AI Project Management | Space AI",
+  title: "Construction Management Guides | Space AI",
   description:
-    "Free construction management guides covering AI scheduling, BIM integration, document automation, and project planning. Step-by-step tutorials for construction professionals.",
+    "Free construction management guides covering AI scheduling, BIM integration, document automation, and project planning.",
   keywords: "construction management guides, AI scheduling tutorials, BIM integration guide, construction project planning, document automation construction, construction software tutorials",
   openGraph: {
     title: "Construction Management Guides & Tutorials | Space AI",

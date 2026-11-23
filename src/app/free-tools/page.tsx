@@ -9,7 +9,7 @@ const PAGE_URL = "https://pmspace.ai/free-tools/";
 export const metadata: Metadata = {
   title: "Free AI Construction Tools & Calculators | Space AI",
   description:
-    "Free construction tools built by Space AI — delay risk simulator, AI RFI writer, Procore ROI calculator, OSHA safety briefing generator, and change order estimator. No signup required.",
+    "Free construction tools built by Space AI — delay risk simulator, AI RFI writer, Procore ROI calculator, and change order estimator. No signup required.",
   keywords: [
     "free construction tools",
     "construction delay cost calculator",

@@ -211,7 +211,7 @@ export default function PlatformPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl mb-4">
                   <Database className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Unified Data Fabric</h3>
+                <h2 className="text-xl font-bold text-white mb-2">Unified Data Fabric</h2>
                 <p className="text-white/50 text-sm">
                   BIM, ERP, field data, and documents in one intelligent layer
                 </p>
@@ -235,7 +235,7 @@ export default function PlatformPage() {
                 <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl mb-4">
                   <Zap className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">Intelligent Actions</h3>
+                <h2 className="text-xl font-bold text-white mb-2">Intelligent Actions</h2>
                 <p className="text-white/50 text-sm">
                   Predictions, automations, and insights delivered in real-time
                 </p>
