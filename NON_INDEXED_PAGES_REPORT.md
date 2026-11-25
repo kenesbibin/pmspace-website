@@ -2,7 +2,7 @@
 
 ## Pages in File System BUT NOT in Google Search Console Index
 
-Based on your GSC indexed  pages list (last updated Apr 28, 2026) vs actual page.tsx files in `src/app`:
+Based on your GSC indexed  pages list (last updated Apr 28, 2026) vs   actual page.tsx files in `src/app`:
 
 ### 🔴 CRITICAL: Pages That SHOULD Be Indexed But Are NOTs
 
