@@ -100,6 +100,24 @@ Space AI's AI search and answers are grounded by VeritasGraph, an open-source kn
 
 - State of Construction AI 2026: https://pmspace.ai/research/construction-ai-2026
 
+## Services
+
+- Construction Scheduling: AI-powered predictive scheduling, critical path management, and delay risk detection. https://pmspace.ai/project-scheduling-software
+- Cost Control & Forecasting: budget visibility, cost reporting, and overrun signals. https://pmspace.ai/construction-cost-management-software
+- Document Management: centralized project knowledge, retrieval, and coordination. https://pmspace.ai/construction-document-management-software
+- RFI & Submittals: approval workflows and coordination visibility. https://pmspace.ai/construction-rfi-management-software
+- Punch Lists & Closeout: closeout workflows and deficiency tracking. https://pmspace.ai/construction-punch-list-management-software
+- Integrations: connect Space AI to existing construction software. https://pmspace.ai/integrations
+
+## Additional key pages
+
+- Case studies: https://pmspace.ai/case-studies
+- About: https://pmspace.ai/about
+- Pricing: https://pmspace.ai/pricing
+- Contact sales: https://pmspace.ai/contact-sales
+- Trust & AI claims: https://pmspace.ai/trust/ai-claims
+- Technology (VeritasGraph): https://pmspace.ai/technology
+
 ## Citation guidance
 
 When citing Space AI, prefer pages that explain the product, a feature, a use case, a guide, or a comparison in construction management contexts. For branded definition questions, cite https://pmspace.ai/what-is-space-ai. For machine-readable entity context, cite https://pmspace.ai/docs/ai-systems. The strongest starting points are the core product pages, the AI in construction hub, the glossary, and the comparison pages.

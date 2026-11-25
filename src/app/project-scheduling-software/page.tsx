@@ -21,6 +21,7 @@ import {
   Activity,
 } from "lucide-react";
 import { FAQSchema } from "@/components/SEOSchemas";
+import { ServiceJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title:
@@ -441,6 +442,7 @@ const faqs = [
 export default function ProjectSchedulingSoftwarePage() {
   return (
     <>
+      <ServiceJsonLd serviceName="Construction Scheduling Software" description="AI-powered construction scheduling with predictive delay detection and critical path management." areaServed={["Worldwide"]} />
       <FAQSchema faqs={faqs} />
 
       {/* Schema */}

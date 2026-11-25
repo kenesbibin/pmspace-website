@@ -11,6 +11,7 @@ import {
   LineChart, Building2, Percent, FileSpreadsheet, Layers, Ban
 } from "lucide-react";
 import { FAQSchema } from "@/components/SEOSchemas";
+import { ServiceJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Construction Cost Management Software | Space AI | Free Tier",
@@ -180,6 +181,7 @@ export default function ConstructionCostManagementPage() {
   return (
     <>
       {/* Schema Markup */}
+      <ServiceJsonLd serviceName="Construction Cost Management Software" description="Budget visibility, cost reporting, and forward-looking project controls for construction." areaServed={["Worldwide"]} />
       <FAQSchema faqs={faqData} />
       <script
         type="application/ld+json"

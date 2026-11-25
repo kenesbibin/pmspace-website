@@ -11,6 +11,7 @@ import {
   Send, Timer, Link2, Bell, Filter, Calendar, Archive
 } from "lucide-react";
 import { FAQSchema } from "@/components/SEOSchemas";
+import { ServiceJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Construction RFI Software | Space AI",
@@ -233,6 +234,7 @@ export default function ConstructionRFIManagementPage() {
   return (
     <>
       {/* Schema Markup */}
+      <ServiceJsonLd serviceName="RFI and Submittals Management Software" description="Approval workflows and coordination visibility for requests and submittals." areaServed={["Worldwide"]} />
       <FAQSchema faqs={faqData} />
       <script
         type="application/ld+json"

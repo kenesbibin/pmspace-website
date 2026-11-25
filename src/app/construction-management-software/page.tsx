@@ -10,6 +10,7 @@ import {
   TrendingUp, Target, Building2, Rocket, Award, Globe
 } from "lucide-react";
 import { FAQSchema } from "@/components/SEOSchemas";
+import { ServiceJsonLd } from "@/components/JsonLd";
 import DocsCallout from "@/components/docs/DocsCallout";
 import PageSummary from "@/components/PageSummary";
 import { RelatedPages } from "@/components/InternalLinking";
@@ -268,6 +269,7 @@ export default function ConstructionManagementSoftwarePage() {
   return (
     <div className="min-h-screen bg-black text-white">
       {/* FAQ Schema for Rich Snippets */}
+      <ServiceJsonLd serviceName="Construction Management Software" description="AI-powered construction management software for scheduling, documents, cost tracking, and field coordination." areaServed={["Worldwide"]} />
       <FAQSchema faqs={faqs} />
       
       {/* Hero Section - Conversion Focused */}

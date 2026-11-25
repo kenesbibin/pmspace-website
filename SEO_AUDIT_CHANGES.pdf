@@ -1,0 +1,80 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+5 0 obj
+<< /Length 2853 >>
+stream
+BT
+/F1 11 Tf
+1 0 0 1 50 760 Tm (SEO Audit Tasks - Changes Implemented) Tj
+1 0 0 1 50 746 Tm () Tj
+1 0 0 1 50 732 Tm (Scope: D:\\ai\\spaceai and D:\\ai\\pmspace-website) Tj
+1 0 0 1 50 718 Tm () Tj
+1 0 0 1 50 704 Tm (1. Crawler / page limit) Tj
+1 0 0 1 50 690 Tm (- public/robots.txt: added OpenSEO-Audit user-agent group) Tj
+1 0 0 1 50 676 Tm (  \(Disallow /tags/, /category/, filtered/paginated listings\).) Tj
+1 0 0 1 50 662 Tm () Tj
+1 0 0 1 50 648 Tm (2. Multiple H1 on homepage) Tj
+1 0 0 1 50 634 Tm (- src/sections/Hero.tsx: mobile duplicate H1 -> H2) Tj
+1 0 0 1 50 620 Tm (- src/sections/SystemofIntelligence.tsx: H1 -> H2) Tj
+1 0 0 1 50 606 Tm (- Result: single active H1 remains.) Tj
+1 0 0 1 50 592 Tm () Tj
+1 0 0 1 50 578 Tm (3. Heading level skips fixed) Tj
+1 0 0 1 50 564 Tm (- careers/CareersPage.tsx: H3 -> H2) Tj
+1 0 0 1 50 550 Tm (- core/ToolSection.tsx: H3 -> H2) Tj
+1 0 0 1 50 536 Tm (- guides/GuidesPage.tsx: H3 -> H2) Tj
+1 0 0 1 50 522 Tm (- platform/page.tsx: selected H3 -> H2) Tj
+1 0 0 1 50 508 Tm (- construction-safety.../page.tsx: H4 -> H3) Tj
+1 0 0 1 50 494 Tm (- sections/SystemofIntelligence.tsx: H3 -> H2) Tj
+1 0 0 1 50 480 Tm () Tj
+1 0 0 1 50 466 Tm (4. Meta description trims \(14 pages\)) Tj
+1 0 0 1 50 452 Tm (/, /apps/, /best-ai-construction-software/,) Tj
+1 0 0 1 50 438 Tm (/best-construction-management-software-for-small-contractors/,) Tj
+1 0 0 1 50 424 Tm (/commercial-construction-software/, /construction-cost-management-software/,) Tj
+1 0 0 1 50 410 Tm (/construction-document-management-software/,) Tj
+1 0 0 1 50 396 Tm (/construction-management-software-australia/, -uae/, -uk/, -usa/,) Tj
+1 0 0 1 50 382 Tm (/construction-safety-management-software/, /free-tools/, /guides/) Tj
+1 0 0 1 50 368 Tm () Tj
+1 0 0 1 50 354 Tm (5. Title trims \(14 pages\)) Tj
+1 0 0 1 50 340 Tm (/, /best-ai-construction-software/,) Tj
+1 0 0 1 50 326 Tm (/best-construction-management-software-for-small-contractors/,) Tj
+1 0 0 1 50 312 Tm (/commercial-construction-software/, /construction-document-management-software/,) Tj
+1 0 0 1 50 298 Tm (/construction-management-software-india/, -singapore/, -uk/,) Tj
+1 0 0 1 50 284 Tm (/construction-punch-list-management-software/,) Tj
+1 0 0 1 50 270 Tm (/construction-rfi-management-software/,) Tj
+1 0 0 1 50 256 Tm (/construction-safety-management-software/,) Tj
+1 0 0 1 50 242 Tm (/construction-software-for-general-contractors/,) Tj
+1 0 0 1 50 228 Tm (/free-construction-management-software/, /guides/) Tj
+1 0 0 1 50 214 Tm () Tj
+1 0 0 1 50 200 Tm (6. Regional metadata \(src/lib/regionalPages.ts\)) Tj
+1 0 0 1 50 186 Tm (- Trimmed titles: India, Singapore, UK) Tj
+1 0 0 1 50 172 Tm (- Trimmed descriptions: USA, UAE, UK, Australia) Tj
+1 0 0 1 50 158 Tm () Tj
+1 0 0 1 50 144 Tm (7. Verification) Tj
+1 0 0 1 50 130 Tm (- npm run build completed successfully in both repositories.) Tj
+ET
+endstream
+endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer
+<< /Size 6 /Root 1 0 R >>
+startxref
+3216
+%%EOF

@@ -11,6 +11,7 @@ import {
   Cloud, Layers, RefreshCw, History, Filter, Tag
 } from "lucide-react";
 import { FAQSchema } from "@/components/SEOSchemas";
+import { ServiceJsonLd } from "@/components/JsonLd";
 
 export const metadata: Metadata = {
   title: "Construction Document Management Software | Space AI",
@@ -167,6 +168,7 @@ export default function ConstructionDocumentManagementPage() {
   return (
     <>
       {/* Schema Markup */}
+      <ServiceJsonLd serviceName="Construction Document Management Software" description="Centralized project knowledge, retrieval, and connected document workflows." areaServed={["Worldwide"]} />
       <FAQSchema faqs={faqData} />
       <script
         type="application/ld+json"
