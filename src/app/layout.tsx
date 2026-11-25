@@ -118,15 +118,47 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               foundingDate: "2025",
               address: {
                 "@type": "PostalAddress",
+                streetAddress: "India",
+                addressLocality: "Kochi",
+                addressRegion: "KL",
+                postalCode: "682001",
                 addressCountry: "IN",
               },
-              areaServed: ["IN", "US", "SG", "AE"],
+              areaServed: ["IN", "US", "SG", "AE", "GB", "AU"],
+              contactPoint: [
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+1 646 421 5740",
+                  contactType: "sales",
+                  areaServed: ["US", "CA", "GB", "AU"],
+                  availableLanguage: ["English"],
+                },
+                {
+                  "@type": "ContactPoint",
+                  telephone: "+65 8611 1900",
+                  contactType: "customer support",
+                  areaServed: ["SG", "IN", "AE", "MY"],
+                  availableLanguage: ["English"],
+                },
+              ],
               founders: [
                 {
                   "@type": "Person",
                   name: "Bibin Prathap",
                   url: "https://bibinprathap.com",
-                  sameAs: "https://bibinprathap.com",
+                  sameAs: [
+                    "https://bibinprathap.com",
+                    "https://www.linkedin.com/in/bibinprathap",
+                    "https://github.com/bibinprathap",
+                  ],
+                  jobTitle: "Founder & CEO",
+                },
+                {
+                  "@type": "Person",
+                  name: "Thomas Jomon",
+                  url: "https://pmspace.ai/space-team/",
+                  sameAs: ["https://www.linkedin.com/in/thomas-jomon-45475327/"],
+                  jobTitle: "Co-Founder, President & Chief AI Officer",
                 },
               ],
               sameAs: [

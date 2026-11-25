@@ -3,6 +3,9 @@ import React from "react";
 export const metadata = {
   title: "Construction Inventory Management Software | pmspace.ai",
   description: "Discover how our construction inventory management software streamlines material tracking, reduces waste, and improves project efficiency for construction teams.",
+  alternates: {
+    canonical: "https://pmspace.ai/tools/construction-inventory-management-software/",
+  },
 };
 
 export default function Page() {
